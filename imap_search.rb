@@ -1,6 +1,5 @@
 #!/usr/bin/ruby 
 # Copyright 2005, Geir Isene. Released under the GPL v. 2
-# Version 0.1 (2005-09-25)
 
 def help
 puts <<HELPTEXT
@@ -19,7 +18,7 @@ DESCRIPTION
 
 OPTIONS
 
-        -x, --text
+        -a, --all
                 Make match against all fields (subject, body, from, to, cc)
   
         -s, --subject
@@ -64,7 +63,7 @@ require 'getoptlong'
 load    '~/.imap.conf'
 
 opts = GetoptLong.new(
-    [ "--text",             "-x",   GetoptLong::NO_ARGUMENT ],
+    [ "--all",              "-a",   GetoptLong::NO_ARGUMENT ],
     [ "--subject",          "-s",   GetoptLong::NO_ARGUMENT ],
     [ "--body",             "-b",   GetoptLong::NO_ARGUMENT ],
     [ "--from",             "-f",   GetoptLong::NO_ARGUMENT ],
@@ -84,7 +83,7 @@ i_version = "0.2"
 
 opts.each do |opt, arg|
   case opt
-    when "--text"
+    when "--all"
       i_text = true
     when "--subject"
       i_subject = true
@@ -116,7 +115,7 @@ searchkey = ARGV[0]
 i_mailbox = 'INBOX.*'
 if ARGV.length > 1 then i_mailbox = ARGV[1] end
 
-imap = Net::IMAP.new(I_server)
+imap = Net::IMAP.new(I_server, port="993", usessl="true")
 imap.authenticate('LOGIN', I_user, I_passwd)
 
 begin
