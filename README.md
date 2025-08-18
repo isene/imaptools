@@ -1,4 +1,9 @@
 # imaptools
+
+[![License](https://img.shields.io/badge/License-Public%20Domain-brightgreen.svg)](https://unlicense.org/)
+[![GitHub stars](https://img.shields.io/github/stars/isene/imaptools.svg)](https://github.com/isene/imaptools/stargazers)
+[![Stay Amazing](https://img.shields.io/badge/Stay-Amazing-blue.svg)](https://isene.org)
+
 Client-side tools for imap
 
 imaptools consists of three programs: imap_search, imap_filter, and
