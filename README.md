@@ -6,6 +6,7 @@
 [![Stay Amazing](https://img.shields.io/badge/Stay-Amazing-blue.svg)](https://isene.org)
 
 <img src="img/imaptools_logo.svg" align="left" width="150" height="150"> Client-side tools for imap
+<br clear="left"/>
 
 imaptools consists of three programs: imap_search, imap_filter, and
 imap_rename. All programs run from your PC against your IMAP server, so
